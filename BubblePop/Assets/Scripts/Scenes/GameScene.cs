@@ -10,7 +10,7 @@ public class GameScene : BaseScene
         base.Init();
 
 
-        //GameObject player = Managers.Game.Spawn(Define.WorldObject.Player, "Player");
+        GameObject player = Managers.Game.Spawn(Define.WorldObject.Player, "Player");
 
     }
     IEnumerator SpawnAfterSeconds(float seconds, GameObject monster)
