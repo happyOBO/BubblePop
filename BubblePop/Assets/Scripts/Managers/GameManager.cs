@@ -8,9 +8,11 @@ public class GameManager
     GameObject _player;
     List<GameObject> _bubbles = new List<GameObject>();
     GameObject _board;
+    GameObject _shootLine;
     public GameObject GetPlayer() { return _player; }
     public List<GameObject> GetBubbles() { return _bubbles; }
     public GameObject GetBoard() { return _board; }
+    public GameObject GetShootLine() { return _shootLine; }
 
     public GameObject Spawn(Define.WorldObject type, string path, Transform parent = null)
     {
@@ -28,9 +30,7 @@ public class GameManager
 
             case Define.WorldObject.Bubble:
             {
-
                 string bubbleColorName = path.Split(new char[] { '/' })[1];
-                 Debug.Log($"{bubbleColorName}");
                 switch (bubbleColorName)
                 {
                     case "Blue":
@@ -46,12 +46,33 @@ public class GameManager
                         go.GetComponent<BubbleController>().bubbleColor = Define.BubbleColor.Yellow;
                         break;
                 }
+
+                switch(parent.name)
+                {
+                    case "Board":
+                    {
+                        go.GetComponent<BubbleController>().bubbleType = Define.BubbleType.Static;
+                        break;
+                    }
+                    case "Player":
+                    {
+                        go.GetComponent<BubbleController>().bubbleType = Define.BubbleType.Shoot;
+                        break;
+                    }
+                }
+
                 _bubbles.Add(go);
                 break;
             }
             case Define.WorldObject.Board:
             {
                 _board = go;
+                break;
+            }
+
+            case Define.WorldObject.ShootLine:
+            {
+                _shootLine = go;
                 break;
             }
         }

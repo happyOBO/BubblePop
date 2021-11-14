@@ -5,7 +5,9 @@ using UnityEngine;
 public class BubbleController : MonoBehaviour
 {
     public Define.BubbleColor bubbleColor;
+    public Define.BubbleType bubbleType;
     // Start is called before the first frame update
+
     void Start()
     {
         Init();

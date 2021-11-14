@@ -6,7 +6,8 @@ public class BoardController : MonoBehaviour
 {
 
     // Start is called before the first frame update
-    float bubbleRadius = 0.6f;
+    public static List<List<BubbleController>> bubbleBoard;
+    public static float bubbleRadius = 0.6f;
     System.Random rand = new System.Random();
 
     void Start()
@@ -23,7 +24,7 @@ public class BoardController : MonoBehaviour
 
     public List<List<BubbleController>> getBoard(int maxWidth, int Height)
     {
-        List<List<BubbleController>> bubbleBoard = new List<List<BubbleController>>();
+        bubbleBoard = new List<List<BubbleController>>();
         for (int row = 0; row < Height; row++)
         {
             List<BubbleController> bubbleRow;
@@ -59,7 +60,6 @@ public class BoardController : MonoBehaviour
         {
             BubbleController bc = getBubbleRandomly(prevBubbleColor);
             prevBubbleColor = bc.bubbleColor;
-            Debug.Log($"prevBubbleColor {prevBubbleColor}");
             
             bc.transform.position += (Vector3.right * startPosX + Vector3.right * bubbleRadius * i);
             bc.transform.position += (Vector3.down * startPosY);

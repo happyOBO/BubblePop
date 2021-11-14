@@ -16,6 +16,7 @@ public class Define
         Player,
         Bubble,
         Board,
+        ShootLine,
     }
 
     public enum MouseEvent
@@ -33,5 +34,11 @@ public class Define
         Green = 1,
         Blue = 2,
         Yellow = 3,
+    }
+
+    public enum BubbleType
+    {
+        Shoot,
+        Static,
     }
 }
