@@ -11,6 +11,7 @@ public class GameScene : BaseScene
 
 
         GameObject player = Managers.Game.Spawn(Define.WorldObject.Player, "Player");
+        GameObject board = Managers.Game.Spawn(Define.WorldObject.Board, "Board");
 
     }
     IEnumerator SpawnAfterSeconds(float seconds, GameObject monster)

@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour
     {
         if(bubble == null)
         {
-            GameObject go = Managers.Game.Spawn(Define.WorldObject.Bubble, "Bubble", gameObject.transform);
+            System.Random rand = new System.Random();
+            Define.BubbleColor bubbleColor = (Define.BubbleColor)rand.Next(0, 4);
+            GameObject go = Managers.Game.Spawn(Define.WorldObject.Bubble, $"Bubble/{bubbleColor.ToString()}", gameObject.transform);
             bubble = go.GetComponent<BubbleController>();
         }
     }

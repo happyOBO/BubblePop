@@ -13,7 +13,6 @@ public class BubbleController : MonoBehaviour
 
     void Init()
     {
-        Debug.Log("Init");
     }
     // Update is called once per frame
     void Update()

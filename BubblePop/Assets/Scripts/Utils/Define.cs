@@ -15,6 +15,7 @@ public class Define
         Unknown,
         Player,
         Bubble,
+        Board,
     }
 
     public enum MouseEvent
@@ -27,6 +28,7 @@ public class Define
 
     public enum BubbleColor
     {
+        Unknown = -1,
         Red = 0,
         Green = 1,
         Blue = 2,
