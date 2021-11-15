@@ -42,6 +42,7 @@ public class BoardController : MonoBehaviour
 
     public void fillBubbles(out List<BubbleController> bubbleRow, int count, int rowIdx)
     {
+        // 해당 행에 버블이 9개 인지 8개인지 명시해주는 방법이 있을까?
         Define.BubbleColor prevBubbleColor = Define.BubbleColor.Unknown;
         float startPosX = 0.0f ;
         float startPosY = 0.0f;
