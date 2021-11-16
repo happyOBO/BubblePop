@@ -71,7 +71,8 @@ public class BoardController : MonoBehaviour
     public BubbleController getBubbleRandomly(Define.BubbleColor prevBubbleColor = Define.BubbleColor.Unknown)
     {
         // 쓸데 없이 복잡해져서 간단하게 만들기로
-        // 5개 더 추가해서 4 이상의 숫자가 나오면 prevBubbleColor 당첨
+        // 버블 색깔 타입 4개에서 5개 더 추가해서 랜덤 추첨 시
+        // 4 이상의 숫자가 나오면 prevBubbleColor 당첨
         Define.BubbleColor bubbleColor;
         int targetNum = rand.Next(0, 4 + 5);
         if (prevBubbleColor == Define.BubbleColor.Unknown)
